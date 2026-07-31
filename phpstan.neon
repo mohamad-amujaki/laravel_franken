@@ -11,3 +11,7 @@ parameters:
         - routes/
 
     level: 7
+
+    bootstrapFiles:
+        - vendor/larastan/larastan/bootstrap.php
+        - vendor/nesbot/carbon/lazy/Carbon/UnprotectedDatePeriod.php

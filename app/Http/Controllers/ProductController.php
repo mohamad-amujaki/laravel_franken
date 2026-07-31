@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -10,7 +9,7 @@ use Illuminate\View\View;
 
 class ProductController extends Controller
 {
-    public function index() : View
+    public function index(): View
     {
         // get all products
         $products = Product::latest()->paginate(10);
@@ -32,7 +31,7 @@ class ProductController extends Controller
             'title' => 'required|min:5',
             'description' => 'required|min: 10',
             'price' => 'required|numeric',
-            'stock' => 'required|numeric'
+            'stock' => 'required|numeric',
         ]);
 
         // upload image
@@ -45,7 +44,7 @@ class ProductController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'price' => $request->price,
-            'stock' => $request->stock
+            'stock' => $request->stock,
         ]);
 
         // redirect to index
