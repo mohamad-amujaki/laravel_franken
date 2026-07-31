@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -49,5 +50,14 @@ class ProductController extends Controller
 
         // redirect to index
         return redirect()->route('products.index')->with(['success' => 'Data berhasil disimpan']);
+    }
+
+    public function show(string $id): View
+    {
+        // get product by id
+        $product = Product::findOrFail($id);
+
+        // render with view products
+        return view('products.show', compact('product'));
     }
 }
