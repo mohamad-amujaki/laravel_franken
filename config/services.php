@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'ckeditor' => [
+        'key' => env('CKEDITOR_KEY'),
+    ],
+
 ];
